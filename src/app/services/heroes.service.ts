@@ -62,7 +62,15 @@ export class HeroesService {
   constructor() {
     console.log('Servicio listo para usar');
   }
+
   getHeroes(): Heroe[] {
     return this.heroes;
+  }
+
+  getHeroe(i: number): Heroe {
+    return this.heroes[i];
+  }
+  buscarHeroes(termin: string): Heroe[] {
+    return this.heroes.filter( x => x.nombre.toLocaleLowerCase().includes(termin));
   }
 }
