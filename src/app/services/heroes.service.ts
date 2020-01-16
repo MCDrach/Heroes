@@ -71,6 +71,7 @@ export class HeroesService {
     return this.heroes[i];
   }
   buscarHeroes(termin: string): Heroe[] {
-    return this.heroes.filter( x => x.nombre.toLocaleLowerCase().includes(termin));
+    this.heroes.forEach( (obj, index) => obj.idx = index );
+    return this.heroes.filter( x =>  x.nombre.toLocaleLowerCase().includes(termin));
   }
 }
